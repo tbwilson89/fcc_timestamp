@@ -17,7 +17,6 @@ app.get('/', function (req, res) {
 })
 app.get(/^\/./, function(req, res){
   var newRequest = req.url.replace(/%20|\//, '')
-  console.log(isNaN(newRequest), newRequest, req.url)
   if(!isNaN(newRequest)) {
     console.log('works')
     var unixDate = newRequest
