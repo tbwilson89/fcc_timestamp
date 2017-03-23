@@ -2,6 +2,7 @@ var express = require ('express')
 
 var express = require('express')
 var app = express()
+var port = process.env.PORT || 8080
 
 var unixData = null;
 var natData = null;
@@ -38,10 +39,7 @@ app.get(/^\/./, function(req, res){
   }
   
 })
-app.get('/test', function (req, res){
-    res.send('This is the test page!')
-})
 
-app.listen(8080, function () {
-  console.log('Example app listening on port 8080!')
+app.listen(port, function () {
+  console.log('Example app listening on port ' + port)
 })
