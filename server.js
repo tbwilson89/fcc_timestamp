@@ -14,7 +14,7 @@ app.get('/', function (req, res) {
   if(/^\/0-9/.test(req.query.url)){
     console.log('this is working!')
   }
-  res.send('This is the home site, please enter a data or unix code into the address!')
+  res.send('This is the home site, please enter a date or unix code at the end of the current URL! Example: "/16march1989"')
 })
 app.get(/^\/./, function(req, res){
   var newRequest = req.url.replace(/%20|\//, '')
@@ -37,7 +37,7 @@ app.get(/^\/./, function(req, res){
     }
     res.send(data)
   }
-  
+
 })
 
 app.listen(port, function () {
